@@ -1,0 +1,13 @@
+<?php
+if($page==""||$page=="home"){
+	$page="dashboard";
+}
+if($page<>""){
+	$systemPage="../modules/".$page."/index.php";
+	if(file_exists($systemPage)){
+		include($systemPage);
+	}else{
+		include("../modules/404.html");
+	}
+}
+?>

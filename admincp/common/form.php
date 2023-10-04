@@ -1,0 +1,17 @@
+<?php
+$newInsertID="";$currentURl="http://".$_SERVER["HTTP_HOST"]."".$_SERVER["REQUEST_URI"];
+if($form<>""){
+	$systemForm="../common/forms/".$form.".php";
+	if(file_exists($systemForm)){
+		include($systemForm);
+		if($currentURl<>""){
+			?><script>window.location="<?=$currentURl?>";</script><?
+		}
+	}else{
+		?><script>window.location="<?=$currentURl?>#<?=$form?>";</script><?
+	}
+}
+if($newInsertID<>""){
+	?><script>window.location="<?=$currentURl?>";</script><?
+}
+?>
